@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lec 2 – Mapping Business Objectives (مراجعة)</title>
+<style>
+html{scroll-behavior:smooth;scroll-padding-top:68px}
+body{margin:0;background:#fff;color:#1a1a1a;font:20px/1.8 "Segoe UI",Tahoma,"Noto Naskh Arabic",Arial,sans-serif}
+nav{position:sticky;top:0;z-index:9;display:flex;gap:6px;overflow-x:auto;padding:10px 8px;background:#fff;border-bottom:2px solid #ddd}
+nav a{flex:0 0 auto;min-width:40px;text-align:center;padding:6px 10px;border-radius:8px;background:#eef2ff;color:#1e3a8a;text-decoration:none;font-weight:700}
+nav a.on{background:#1e3a8a;color:#fff}
+main{max-width:860px;margin:0 auto;padding:0 16px 60px}
+section,.intro{padding:22px 0;border-bottom:1px solid #e5e5e5}
+h1{font-size:1.4em;line-height:1.5}h2{font-size:1.2em;margin:.2em 0}h3{font-size:.95em;color:#475569;margin:1em 0 .2em}
+.pg{display:inline-block;background:#1e3a8a;color:#fff;padding:2px 14px;border-radius:20px;font-weight:700}
+.ta{color:#334155;font-weight:700}
+.en{direction:ltr;text-align:right;display:block}
+.l{margin:.4em 0;padding-right:12px;border-right:4px solid #93c5fd}
+.box{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:10px 14px}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%}td,th{border:1px solid #cbd5e1;padding:8px;vertical-align:top}th{background:#eef2ff}
+.q{background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:6px 14px 14px;margin-top:14px}
+.o{display:block;width:100%;text-align:right;font:inherit;background:#fff;border:2px solid #d1d5db;border-radius:10px;padding:8px 12px;margin:8px 0;cursor:pointer}
+.o span{display:block}.o .en{font-weight:600}
+.o.pick{border-color:#2563eb;background:#eff6ff}
+.sh{font:inherit;font-size:.9em;background:#1e3a8a;color:#fff;border:0;border-radius:8px;padding:8px 16px;cursor:pointer}
+.ans{display:none;margin-top:10px;background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:4px 14px}
+.q.show .ans{display:block}
+.q.show .o.c{background:#dcfce7;border-color:#16a34a}
+.q.show .o.pick:not(.c){background:#fee2e2;border-color:#dc2626}
+</style></head><body>
+<nav id="nav"></nav>
+<main id="m">
+<div class="intro">
+<h1>Mapping Business Objectives to Technology Objectives in Cybersecurity<br>مراجعة المحاضرة 2 (28 صفحة)</h1>
+<div class="box">الاختبار النصفي CSEN4303: الخميس 5 نوفمبر 2026، 10:30 م، مدة 60 دقيقة، القاعة 0602، المحاضرات 1–5. الأسئلة: صح/خطأ، اختيار متعدد، فراغات، مطابقة، أسئلة مفتوحة، رسومات.<br>طريقة الاستخدام: اقرأ الملخص والترجمة، ثم اختر إجابتك في كل سؤال، ثم اضغط «إظهار الإجابة». الجدول الوحيد في المحاضرة (صفحة 6) معاد رسمه كما هو.</div>
+</div>
+</main>
+<script>
+const L=s=>s.replace(/[A-Za-z][A-Za-z0-9 ,&;\/.\-+]*[A-Za-z0-9]/g,m=>'<bdi dir="ltr">'+m+'</bdi>');
+const T6=[
+["Protect sensitive data","Data encryption, access control, DLP tools","حماية البيانات الحساسة","تشفير البيانات، التحكم في الوصول، أدوات منع تسرب البيانات (DLP)"],
+["Maintain regulatory compliance","Compliance monitoring, automated reporting, audit logging","الحفاظ على الامتثال التنظيمي","مراقبة الامتثال، التقارير الآلية، تسجيل سجلات التدقيق"],
+["Ensure operational continuity","Disaster recovery plans, high-availability systems, redundancy","ضمان استمرارية العمليات","خطط التعافي من الكوارث، أنظمة عالية التوفر، التكرار (الاحتياط)"],
+["Support growth and innovation","Scalable secure cloud services, API security, DevSecOps","دعم النمو والابتكار","خدمات سحابية آمنة وقابلة للتوسع، أمن واجهات البرمجة (API)، DevSecOps"],
+["Protect brand reputation","Threat detection &amp; response, security awareness training","حماية سمعة العلامة التجارية","كشف التهديدات والاستجابة لها، التدريب على الوعي الأمني"]];
+const Q=(e,a,o,c,x)=>({e,a,o,c,x});
+const S=[
+[1,"Mapping Business Objectives to Technology Objectives in Cybersecurity","ربط الأهداف التجارية بالأهداف التقنية في الأمن السيبراني",[],[],[]],
+[2,"What is Cybersecurity in a Business Context?","ما هو الأمن السيبراني في سياق الأعمال؟",
+["Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks","In business, cybersecurity safeguards data, operations, and customer trust","Cybersecurity is a strategic business enabler. Aligning technology objectives with business objectives ensures that security investments deliver measurable value and support organizational priorities."],
+["الأمن السيبراني هو ممارسة حماية الأنظمة والشبكات والبرامج من الهجمات الرقمية","في بيئة الأعمال، يحمي الأمن السيبراني البيانات والعمليات وثقة العملاء","الأمن السيبراني ممكّن استراتيجي للأعمال. مواءمة الأهداف التقنية مع الأهداف التجارية تضمن أن استثمارات الأمن تقدّم قيمة قابلة للقياس وتدعم أولويات المنظمة."],
+[Q("Cybersecurity is the practice of protecting systems, networks, and programs from ______.","الأمن السيبراني هو ممارسة حماية الأنظمة والشبكات والبرامج من ______.",[["financial audits","التدقيقات المالية"],["digital attacks","الهجمات الرقمية"],["marketing campaigns","الحملات التسويقية"]],1,"التعريف المباشر: الأمن السيبراني = حماية (أنظمة + شبكات + برامج) من هجمات رقمية. ربط للحفظ: «سايبر» = رقمي، فالخطر رقمي وليس مادياً. وفي الأعمال يحمي أيضاً: البيانات والعمليات وثقة العملاء."),
+Q("Cybersecurity is a strategic business ______.","الأمن السيبراني ______ استراتيجي للأعمال.",[["enabler","ممكّن"],["expense","مصروف"],["obstacle","عائق"]],0,"النص يصفه بأنه «ممكّن» (Enabler) وليس عبئاً: عند مواءمته مع الأهداف التجارية تعطي استثمارات الأمن قيمة قابلة للقياس وتدعم أولويات المنظمة. تذكّر: الأمن = تمكين لا تعطيل.")]],
+[3,"Why Alignment Matters","لماذا المواءمة مهمة؟",
+["Prevents security measures from becoming isolated from business needs","Ensures technology investments support core operations","Improves risk management and governance","Builds trust with customers, regulators, and partners"],
+["يمنع أن تصبح إجراءات الأمن معزولة عن احتياجات العمل","يضمن أن الاستثمارات التقنية تدعم العمليات الأساسية","يحسّن إدارة المخاطر والحوكمة","يبني الثقة مع العملاء والجهات التنظيمية والشركاء"],
+[Q("Which of the following is a reason why alignment matters?","أي مما يلي سبب لأهمية المواءمة؟",[["Replaces the need for risk management","يلغي الحاجة إلى إدارة المخاطر"],["Removes legal obligations","يزيل الالتزامات القانونية"],["Builds trust with customers, regulators, and partners","يبني الثقة مع العملاء والجهات التنظيمية والشركاء"]],2,"الأسباب الأربعة: عدم عزل الأمن عن العمل، دعم العمليات الأساسية، تحسين المخاطر والحوكمة، بناء الثقة. الخياران الآخران يعاكسان الفكرة (المواءمة تحسّن إدارة المخاطر ولا تلغيها). حيلة: «عزل – دعم – حوكمة – ثقة».")]],
+[4,"The Strategic Role of Cybersecurity","الدور الاستراتيجي للأمن السيبراني",
+["Cybersecurity enables safe business growth","Supports compliance and legal obligations","Protects against financial and reputational damage"],
+["الأمن السيبراني يتيح نمواً آمناً للأعمال","يدعم الامتثال والالتزامات القانونية","يحمي من الأضرار المالية وأضرار السمعة"],
+[Q("Cybersecurity enables safe business ______.","الأمن السيبراني يتيح ______ آمناً للأعمال.",[["downtime","التوقف"],["growth","النمو"],["losses","الخسائر"]],1,"الدور الاستراتيجي ثلاثي: نمو آمن + امتثال قانوني + حماية من ضرر مالي وضرر سمعة. الأمن يتيح التوسع بأمان فهو يخدم «النمو» ولا يسبب توقفاً أو خسائر.")]],
+[5,"Business Objectives in Cybersecurity","الأهداف التجارية في الأمن السيبراني",
+["Protect sensitive data (customer, employee, financial, intellectual property)","Maintain compliance with laws and regulations (GDPR, HIPAA, PCI DSS)","Ensure operational continuity to prevent downtime","Support growth and innovation with scalable, secure solutions","Protect brand reputation and maintain customer trust"],
+["حماية البيانات الحساسة (بيانات العملاء والموظفين والبيانات المالية والملكية الفكرية)","الحفاظ على الامتثال للقوانين واللوائح (GDPR وHIPAA وPCI DSS)","ضمان استمرارية العمليات لمنع التوقف","دعم النمو والابتكار بحلول قابلة للتوسع وآمنة","حماية سمعة العلامة التجارية والحفاظ على ثقة العملاء"],
+[Q("Which of the following is a business objective in cybersecurity?","أي مما يلي هدف تجاري في الأمن السيبراني؟",[["Reduce the number of employees","تقليل عدد الموظفين"],["Increase hardware purchases","زيادة شراء الأجهزة"],["Maintain compliance with laws and regulations (GDPR, HIPAA, PCI DSS)","الحفاظ على الامتثال للقوانين واللوائح (GDPR وHIPAA وPCI DSS)"]],2,"الأهداف الخمسة: بيانات – امتثال – استمرارية – نمو – سمعة. الامتثال للقوانين من نص الشريحة، أما تقليل الموظفين وشراء الأجهزة فليسا مذكورين. تذكّر أمثلة القوانين: GDPR وHIPAA وPCI DSS.")]],
+[6,"Mapping Business Objectives to Technology Objectives","ربط الأهداف التجارية بالأهداف التقنية",[],[],
+[Q("Business Objective: Support growth and innovation → Technology Objective: ______","الهدف التجاري: دعم النمو والابتكار ← الهدف التقني: ______",[["Data encryption, access control, DLP tools","تشفير البيانات، التحكم في الوصول، أدوات DLP"],["Disaster recovery plans, high-availability systems, redundancy","خطط التعافي من الكوارث، أنظمة عالية التوفر، التكرار"],["Scalable secure cloud services, API security, DevSecOps","خدمات سحابية آمنة وقابلة للتوسع، أمن API، DevSecOps"]],2,"النمو يحتاج توسعاً (Scalable) وتطويراً آمناً (DevSecOps). الخيار الأول لحماية البيانات والثاني للاستمرارية. حفظ باقي الجدول: الاستمرارية ← تعافٍ وتوفر وتكرار؛ الامتثال ← مراقبة وتقارير وتدقيق؛ السمعة ← كشف واستجابة وتوعية."),
+Q("Business Objective: Protect sensitive data → Technology Objective: ______","الهدف التجاري: حماية البيانات الحساسة ← الهدف التقني: ______",[["Data encryption, access control, DLP tools","تشفير البيانات، التحكم في الوصول، أدوات DLP"],["Threat detection & response, security awareness training","كشف التهديدات والاستجابة، التدريب على الوعي الأمني"],["Compliance monitoring, automated reporting, audit logging","مراقبة الامتثال، التقارير الآلية، تسجيل التدقيق"]],0,"ربط: البيانات تُخفى (تشفير) وتُقفل (تحكم بالوصول) وتُمنع من التسرب (DLP). الخيار الثاني لحماية السمعة والثالث للامتثال.")]],
+[7,"The Gap Between Business Goals and Tech Implementation","الفجوة بين الأهداف التجارية والتنفيذ التقني",
+["Technical controls without business alignment waste resources","Misalignment leads to compliance failures","Can cause operational disruption"],
+["الضوابط التقنية بدون مواءمة مع الأعمال تهدر الموارد","عدم المواءمة يؤدي إلى فشل الامتثال","قد يسبب تعطّلاً في العمليات"],
+[Q("Technical controls without business alignment ______.","الضوابط التقنية بدون مواءمة مع الأعمال ______.",[["guarantee compliance","تضمن الامتثال"],["waste resources","تهدر الموارد"],["reduce all risk","تقلل كل المخاطر"]],1,"الضبط التقني الذي لا يخدم هدفاً تجارياً يُهدر المال والوقت، وعدم المواءمة يسبب فشل امتثال وتعطّل عمليات. حيلة: «هدر – فشل – تعطّل».")]],
+[8,"Benefits of Mapping Objectives","فوائد ربط الأهداف",
+["To achieve a better Return on Investment (ROI) for technology","Improved communication between IT and business teams","Higher resilience against threats"],
+["لتحقيق عائد أفضل على الاستثمار (ROI) في التقنية","تحسين التواصل بين فرق تقنية المعلومات وفرق الأعمال","مرونة (صمود) أعلى في مواجهة التهديدات"],
+[Q("Which is a benefit of mapping objectives?","أي مما يلي فائدة من ربط الأهداف؟",[["Improved communication between IT and business teams","تحسين التواصل بين فرق تقنية المعلومات وفرق الأعمال"],["Lower resilience against threats","مرونة أقل أمام التهديدات"],["Less return on investment for technology","عائد أقل على الاستثمار في التقنية"]],0,"الفوائد ثلاث: عائد أفضل (ROI) + تواصل أفضل بين IT والأعمال + صمود أعلى أمام التهديدات. الخياران الآخران عكس الفائدة.")]],
+[9,"Core Business Objectives in Modern Organizations","الأهداف التجارية الأساسية في المنظمات الحديثة",
+["Revenue growth","Operational efficiency","Customer satisfaction","Regulatory compliance","Market competitiveness"],
+["نمو الإيرادات","الكفاءة التشغيلية","رضا العملاء","الامتثال التنظيمي","التنافسية في السوق"],
+[Q("Which of the following is a core business objective in modern organizations?","أي مما يلي هدف تجاري أساسي في المنظمات الحديثة؟",[["Network latency","زمن تأخر الشبكة"],["Customer satisfaction","رضا العملاء"],["Password length","طول كلمة المرور"]],1,"الأهداف الخمسة: إيرادات، كفاءة، رضا العملاء، امتثال، تنافسية. أما زمن تأخر الشبكة وطول كلمة المرور فتفاصيل تقنية وليست أهدافاً تجارية.")]],
+[10,"Risk Appetite &amp; Business Goals","شهية المخاطرة والأهداف التجارية",
+["Risk appetite defines acceptable levels of risk","Influences security investments","Varies by industry and organization size"],
+["تحدد شهية المخاطرة المستويات المقبولة من المخاطر","تؤثر على الاستثمارات الأمنية","تختلف حسب الصناعة وحجم المنظمة"],
+[Q("Risk appetite defines ______ levels of risk.","تحدد شهية المخاطرة ______ من المخاطر.",[["acceptable","المستويات المقبولة"],["zero","مستوى الصفر"],["unlimited","مستويات غير محدودة"]],0,"شهية المخاطرة = القدر المقبول من المخاطرة؛ تؤثر على حجم الاستثمار الأمني وتختلف بين الصناعات والأحجام (مثلاً بنك مقابل شركة صغيرة). الكلمة المفتاح: «مقبولة».")]],
+[11,"Key Steps in Mapping","الخطوات الأساسية في الربط",
+["Identify critical business goals","Assess risks to those goals (Business Impact Analysis)","Select appropriate security technologies","Establish metrics for success","Review &amp; adjust regularly"],
+["تحديد الأهداف التجارية الحرجة","تقييم المخاطر التي تهدد تلك الأهداف (تحليل الأثر على الأعمال Business Impact Analysis)","اختيار تقنيات الأمن المناسبة","وضع مقاييس للنجاح","المراجعة والتعديل بانتظام"],
+[Q("Which is the first key step in mapping?","ما أول خطوة أساسية في الربط؟",[["Select appropriate security technologies","اختيار تقنيات الأمن المناسبة"],["Review & adjust regularly","المراجعة والتعديل بانتظام"],["Identify critical business goals","تحديد الأهداف التجارية الحرجة"]],2,"الترتيب: حدّد ← قيّم ← اختر ← مقاييس ← راجع. نبدأ بالهدف التجاري ولا نبدأ بالتقنية. اختيار التقنية هو الخطوة 3 والمراجعة الأخيرة.")]],
+[12,"What Are Technology Objectives?","ما هي الأهداف التقنية؟",
+["Goals related to the implementation and use of IT systems","In cybersecurity, objectives focus on protecting assets and ensuring service availability"],
+["أهداف مرتبطة بتنفيذ واستخدام أنظمة تقنية المعلومات","في الأمن السيبراني تركز الأهداف على حماية الأصول وضمان توفّر الخدمة"],
+[Q("Technology objectives are goals related to the implementation and use of ______ systems.","الأهداف التقنية هي أهداف مرتبطة بتنفيذ واستخدام أنظمة ______.",[["HR","الموارد البشرية"],["IT","تقنية المعلومات"],["accounting","المحاسبة"]],1,"الأهداف التقنية تخص أنظمة تقنية المعلومات (IT)، وفي الأمن تركّز على حماية الأصول وتوفّر الخدمة. ربط: الهدف التجاري = «ماذا تريد الشركة»، والتقني = «بأي أنظمة نحققه».")]],
+[13,"Common Cybersecurity Technology Objectives","أهداف تقنية شائعة في الأمن السيبراني",
+["Data encryption","Access control","Threat detection and response","Disaster recovery and backup"],
+["تشفير البيانات","التحكم في الوصول","كشف التهديدات والاستجابة لها","التعافي من الكوارث والنسخ الاحتياطي"],
+[Q("Which of the following is a common cybersecurity technology objective?","أي مما يلي هدف تقني شائع في الأمن السيبراني؟",[["Revenue growth","نمو الإيرادات"],["Customer satisfaction","رضا العملاء"],["Disaster recovery and backup","التعافي من الكوارث والنسخ الاحتياطي"]],2,"الأهداف التقنية الأربعة: تشفير، تحكم وصول، كشف واستجابة، تعافٍ ونسخ احتياطي. أما «نمو الإيرادات» و«رضا العملاء» فأهداف تجارية (صفحة 9). فرّق بين الاثنين فهو سؤال متكرر.")]],
+[14,"Frameworks to Guide Objectives","أطر عمل لتوجيه الأهداف",
+["NIST Cybersecurity Framework","ISO 27001","COBIT"],
+["إطار NIST للأمن السيبراني","ISO 27001","COBIT"],
+[Q("Which of the following is a framework to guide objectives?","أي مما يلي إطار عمل لتوجيه الأهداف؟",[["NIST Cybersecurity Framework","إطار NIST للأمن السيبراني"],["Mean time to recover (MTTR)","متوسط الوقت للتعافي (MTTR)"],["Data encryption","تشفير البيانات"]],0,"الأطر الثلاثة: NIST CSF وISO 27001 وCOBIT. أما MTTR فمقياس (صفحة 16) والتشفير هدف تقني (صفحة 13).")]],
+[15,"Key Security Domains","مجالات الأمن الرئيسية",
+["Network security","Endpoint security","Application security","Data security"],
+["أمن الشبكات","أمن الأجهزة الطرفية","أمن التطبيقات","أمن البيانات"],
+[Q("Which of the following is a key security domain?","أي مما يلي مجال أمني رئيسي؟",[["Customer satisfaction","رضا العملاء"],["Market competitiveness","التنافسية في السوق"],["Endpoint security","أمن الأجهزة الطرفية"]],2,"المجالات الأربعة: شبكات، أجهزة طرفية، تطبيقات، بيانات. حيلة: من الخارج للداخل: شبكة ← جهاز ← تطبيق ← بيانات. الخياران الآخران أهداف تجارية.")]],
+[16,"Metrics for Technology Objectives","مقاييس الأهداف التقنية",
+["Incident response time","Mean time to detect (MTTD)","Mean time to recover (MTTR)","Number of compliance violations"],
+["زمن الاستجابة للحوادث","متوسط الوقت لاكتشاف الحادث (MTTD)","متوسط الوقت للتعافي (MTTR)","عدد مخالفات الامتثال"],
+[Q("MTTD stands for ______.","MTTD تعني ______.",[["Mean time to deploy","متوسط وقت النشر"],["Mean time to detect","متوسط الوقت للاكتشاف"],["Maximum time to defend","أقصى وقت للدفاع"]],1,"MTTD = Mean time to detect (D = Detect اكتشاف)، وMTTR = Mean time to recover (R = Recover تعافٍ). والمقياسان الآخران: زمن الاستجابة للحوادث وعدد مخالفات الامتثال.")]],
+[17,"Step 1: Identify Business Goals","الخطوة 1: تحديد الأهداف التجارية",
+["Engage stakeholders","Review strategic plans","Identify critical assets and processes"],
+["إشراك أصحاب المصلحة","مراجعة الخطط الاستراتيجية","تحديد الأصول والعمليات الحرجة"],
+[Q("Which activity belongs to Step 1: Identify Business Goals?","أي نشاط ينتمي إلى الخطوة 1: تحديد الأهداف التجارية؟",[["Assign responsibilities","إسناد المسؤوليات"],["Identify critical assets and processes","تحديد الأصول والعمليات الحرجة"],["Conduct regular security audits","إجراء مراجعات أمنية دورية"]],1,"الخطوة 1 = فهم العمل: أصحاب المصلحة + الخطط الاستراتيجية + الأصول الحرجة. «Assign responsibilities» من الخطوة 4 و«Conduct regular security audits» من الخطوة 5.")]],
+[18,"Step 2: Risk Assessment &amp; Business Impact Analysis","الخطوة 2: تقييم المخاطر وتحليل الأثر على الأعمال",
+["Identify threats","Assess vulnerabilities","Determine potential impacts"],
+["تحديد التهديدات","تقييم نقاط الضعف","تحديد الآثار المحتملة"],
+[Q("Which activity belongs to Step 2: Risk Assessment & Business Impact Analysis?","أي نشاط ينتمي إلى الخطوة 2: تقييم المخاطر وتحليل الأثر على الأعمال؟",[["Set timelines and milestones","تحديد الجداول الزمنية والمراحل"],["Match solutions to business needs","مطابقة الحلول مع احتياجات العمل"],["Determine potential impacts","تحديد الآثار المحتملة"]],2,"الخطوة 2 = المخاطر: تهديدات ← نقاط ضعف ← آثار. الخيار الأول من الخطوة 4 والثاني من الخطوة 3.")]],
+[19,"Step 3: Selecting Security Technologies","الخطوة 3: اختيار تقنيات الأمن",
+["Match solutions to business needs","Consider scalability and flexibility","Ensure vendor compliance with standards"],
+["مطابقة الحلول مع احتياجات العمل","مراعاة قابلية التوسع والمرونة","التأكد من التزام المورّد بالمعايير"],
+[Q("Which activity belongs to Step 3: Selecting Security Technologies?","أي نشاط ينتمي إلى الخطوة 3: اختيار تقنيات الأمن؟",[["Ensure vendor compliance with standards","التأكد من التزام المورّد بالمعايير"],["Engage stakeholders","إشراك أصحاب المصلحة"],["Monitor KPIs","متابعة مؤشرات الأداء"]],0,"الخطوة 3 = شراء/اختيار التقنية: مطابقة الحاجة، توسع ومرونة، والتزام المورّد بالمعايير. «Engage stakeholders» من الخطوة 1 و«Monitor KPIs» من الخطوة 5.")]],
+[20,"Step 4: Implementation Planning","الخطوة 4: التخطيط للتنفيذ",
+["Develop a roadmap","Set timelines and milestones","Assign responsibilities"],
+["وضع خارطة طريق","تحديد الجداول الزمنية والمراحل","إسناد المسؤوليات"],
+[Q("Which activity belongs to Step 4: Implementation Planning?","أي نشاط ينتمي إلى الخطوة 4: التخطيط للتنفيذ؟",[["Identify threats","تحديد التهديدات"],["Adapt to evolving threats","التكيف مع التهديدات المتطورة"],["Develop a roadmap","وضع خارطة طريق"]],2,"الخطوة 4 = التخطيط: خارطة طريق + جداول ومراحل + مسؤوليات (من يفعل ماذا ومتى). «Identify threats» من الخطوة 2 و«Adapt to evolving threats» من الخطوة 5.")]],
+[21,"Step 5: Continuous Review &amp; Improvement","الخطوة 5: المراجعة والتحسين المستمر",
+["Conduct regular security audits","Monitor KPIs","Adapt to evolving threats"],
+["إجراء مراجعات أمنية دورية","متابعة مؤشرات الأداء (KPIs)","التكيف مع التهديدات المتطورة"],
+[Q("Which activity belongs to Step 5: Continuous Review & Improvement?","أي نشاط ينتمي إلى الخطوة 5: المراجعة والتحسين المستمر؟",[["Develop a roadmap","وضع خارطة طريق"],["Conduct regular security audits","إجراء مراجعات أمنية دورية"],["Assess vulnerabilities","تقييم نقاط الضعف"]],1,"الخطوة 5 = مراجعة دائمة: تدقيق دوري + مؤشرات أداء + تكيّف مع التهديدات. حيلة الخطوات الخمس: حدّد – قيّم – اختر – خطّط – راجع.")]],
+[22,"Mapping Table (Overview)","جدول الربط (نظرة عامة)",
+["Business Objective: Protect customer data → Tech Objective: Encryption, access control","Business Objective: Maintain compliance → Tech Objective: Compliance monitoring tools"],
+["الهدف التجاري: حماية بيانات العملاء ← الهدف التقني: التشفير والتحكم في الوصول","الهدف التجاري: الحفاظ على الامتثال ← الهدف التقني: أدوات مراقبة الامتثال"],
+[Q("Business Objective: Protect customer data → Tech Objective: ______","الهدف التجاري: حماية بيانات العملاء ← الهدف التقني: ______",[["Compliance monitoring tools","أدوات مراقبة الامتثال"],["Fraud detection systems","أنظمة كشف الاحتيال"],["Encryption, access control","التشفير والتحكم في الوصول"]],2,"بيانات العملاء تُحمى بالتشفير والتحكم في الوصول، أما أدوات مراقبة الامتثال فهدفها الامتثال، وكشف الاحتيال مثال البنوك (صفحة 23).")]],
+[23,"Industry Example: Banking","مثال من الصناعة: البنوك",
+["Business Goal: Ensure transaction security","Tech Objective: Multi-factor authentication, fraud detection systems"],
+["الهدف التجاري: ضمان أمن المعاملات","الهدف التقني: المصادقة متعددة العوامل وأنظمة كشف الاحتيال"],
+[Q("Business Goal: Ensure transaction security → Tech Objective: ______","الهدف التجاري: ضمان أمن المعاملات ← الهدف التقني: ______",[["Multi-factor authentication, fraud detection systems","المصادقة متعددة العوامل وأنظمة كشف الاحتيال"],["HIPAA-compliant data storage and transmission","تخزين ونقل بيانات متوافق مع HIPAA"],["PCI DSS compliant payment gateway","بوابة دفع متوافقة مع PCI DSS"]],0,"البنك يخشى سرقة الأموال بالاحتيال، فيحتاج تحققاً إضافياً (MFA) وكشفاً للاحتيال. الخياران الآخران للصحة (HIPAA) والتجارة الإلكترونية (PCI DSS).")]],
+[24,"Industry Example: Healthcare","مثال من الصناعة: الرعاية الصحية",
+["Business Goal: Patient data confidentiality","Tech Objective: HIPAA-compliant data storage and transmission"],
+["الهدف التجاري: سرية بيانات المرضى","الهدف التقني: تخزين ونقل بيانات متوافق مع HIPAA"],
+[Q("Business Goal: Patient data confidentiality → Tech Objective: ______","الهدف التجاري: سرية بيانات المرضى ← الهدف التقني: ______",[["PCI DSS compliant payment gateway","بوابة دفع متوافقة مع PCI DSS"],["HIPAA-compliant data storage and transmission","تخزين ونقل بيانات متوافق مع HIPAA"],["Multi-factor authentication, fraud detection systems","المصادقة متعددة العوامل وأنظمة كشف الاحتيال"]],1,"المرضى ← HIPAA، والمطلوب حماية بياناتهم أثناء التخزين والنقل. ربط: الحرف H في HIPAA يشير إلى الصحة (Health).")]],
+[25,"Industry Example: E-Commerce","مثال من الصناعة: التجارة الإلكترونية",
+["Business Goal: Secure online payments","Tech Objective: PCI DSS compliant payment gateway"],
+["الهدف التجاري: تأمين المدفوعات عبر الإنترنت","الهدف التقني: بوابة دفع متوافقة مع PCI DSS"],
+[Q("Business Goal: Secure online payments → Tech Objective: ______","الهدف التجاري: تأمين المدفوعات عبر الإنترنت ← الهدف التقني: ______",[["HIPAA-compliant data storage and transmission","تخزين ونقل بيانات متوافق مع HIPAA"],["Compliance monitoring tools","أدوات مراقبة الامتثال"],["PCI DSS compliant payment gateway","بوابة دفع متوافقة مع PCI DSS"]],2,"المدفوعات عبر الإنترنت ← بوابة دفع متوافقة مع PCI DSS (معيار أمن بيانات بطاقات الدفع). ثلاثية الأمثلة: بنك = MFA واحتيال، صحة = HIPAA، تجارة = PCI DSS.")]],
+[26,"Best Practices for Objective Alignment","أفضل الممارسات لمواءمة الأهداف",
+["Use standardized frameworks","Engage cross-functional teams","Regularly review alignment"],
+["استخدام أطر معيارية","إشراك فرق متعددة التخصصات","مراجعة المواءمة بانتظام"],
+[Q("Which is a best practice for objective alignment?","أي مما يلي من أفضل الممارسات لمواءمة الأهداف؟",[["Focusing solely on compliance","التركيز على الامتثال فقط"],["Engage cross-functional teams","إشراك فرق متعددة التخصصات"],["Ignoring user experience","تجاهل تجربة المستخدم"]],1,"الممارسات الجيدة: أطر معيارية + فرق متعددة التخصصات + مراجعة دورية. الخياران الآخران هما «الأخطاء الشائعة» في الصفحة التالية.")]],
+[27,"Common Mistakes to Avoid","أخطاء شائعة يجب تجنبها",
+["Focusing solely on compliance","Ignoring user experience","Underestimating insider threats"],
+["التركيز على الامتثال فقط","تجاهل تجربة المستخدم","التقليل من شأن التهديدات الداخلية"],
+[Q("Which is a common mistake to avoid?","أي مما يلي خطأ شائع يجب تجنبه؟",[["Use standardized frameworks","استخدام أطر معيارية"],["Regularly review alignment","مراجعة المواءمة بانتظام"],["Underestimating insider threats","التقليل من شأن التهديدات الداخلية"]],2,"الأخطاء الثلاثة: امتثال فقط، تجاهل المستخدم، تجاهل التهديد الداخلي. الخياران الآخران ممارسات جيدة من الصفحة 26. حيلة: امتثال – مستخدم – داخلي.")]],
+[28,"Overcoming Communication Gaps","التغلب على فجوات التواصل",
+["Translate technical risks into business terms","Use dashboards and reports","Foster regular meetings between teams"],
+["ترجمة المخاطر التقنية إلى لغة الأعمال","استخدام لوحات المعلومات والتقارير","تعزيز الاجتماعات المنتظمة بين الفرق"],
+[Q("To overcome communication gaps, you should ______.","للتغلب على فجوات التواصل ينبغي ______.",[["Avoid dashboards and reports","تجنب لوحات المعلومات والتقارير"],["Avoid regular meetings between teams","تجنب الاجتماعات المنتظمة بين الفرق"],["Translate technical risks into business terms","ترجمة المخاطر التقنية إلى لغة الأعمال"]],2,"الحلول الثلاثة: ترجمة المخاطر للغة الأعمال + لوحات وتقارير + اجتماعات منتظمة. الخياران الآخران يوسّعان الفجوة بدل سدّها.")]]
+];
+const nav=document.getElementById('nav'),m=document.getElementById('m');
+let h='',nv='';
+S.forEach(([n,te,ta,en,ar,qs])=>{
+ nv+=`<a href="#s${n}">${n}</a>`;
+ h+=`<section id="s${n}"><span class="pg">صفحة رقم ${n}</span><h2 class="en">${te}</h2><div class="ta">${L(ta)}</div>`;
+ if(n==6){h+='<h3>الملخص والترجمة (الجدول كما في المحاضرة)</h3><div class="tw"><table><tr><th class="en">Business Objective</th><th class="en">Technology Objective</th></tr>'+T6.map(r=>`<tr><td><span class="en">${r[0]}</span>${L(r[2])}</td><td><span class="en">${r[1]}</span>${L(r[3])}</td></tr>`).join('')+'</table></div>';}
+ else if(en.length){h+='<h3>الملخص (English)</h3>'+en.map(x=>`<p class="en l">${x}</p>`).join('')+'<h3>الترجمة</h3>'+ar.map(x=>`<p class="l">${L(x)}</p>`).join('');}
+ qs.forEach((q,i)=>{h+=`<div class="q"><h3>سؤال ${i+1}</h3><p class="en">${q.e}</p><p>${L(q.a)}</p>`+q.o.map((o,j)=>`<button class="o${j==q.c?' c':''}" onclick="pk(this)"><span class="en">${'ABC'[j]}) ${o[0]}</span><span>${L(o[1])}</span></button>`).join('')+`<button class="sh" onclick="this.parentNode.classList.toggle('show')">إظهار / إخفاء الإجابة</button><div class="ans"><p><b>✔ الإجابة الصحيحة: ${'ABC'[q.c]}</b></p><p>${L(q.x)}</p></div></div>`;});
+ h+='</section>';
+});
+nav.innerHTML=nv;m.insertAdjacentHTML('beforeend',h);
+function pk(b){b.parentNode.querySelectorAll('.o').forEach(x=>x.classList.remove('pick'));b.classList.add('pick')}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')=='#'+e.target.id))}),{rootMargin:'-30% 0px -60% 0px'});
+document.querySelectorAll('section').forEach(s=>io.observe(s));
+</script></body></html>
